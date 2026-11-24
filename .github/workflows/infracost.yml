@@ -2,7 +2,7 @@ name: Infracost
 
 on:
   pull_request:
-    paths: [deployment/terraform/**]
+    paths: [deployment/terraform/**, .github/workflows/infracost.yml]
 
 permissions:
   contents: read
