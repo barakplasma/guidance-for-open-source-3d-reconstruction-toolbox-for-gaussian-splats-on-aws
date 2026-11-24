@@ -38,6 +38,7 @@ jobs:
           --behavior=update
 
       - name: Upload run to Infracost Cloud dashboard
+        continue-on-error: true # dashboard upload returned UNAUTHENTICATED for this key; non-essential
         run: infracost upload --path=/tmp/diff.json
 
       - name: Absolute monthly cost (job summary)
