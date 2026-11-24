@@ -37,6 +37,9 @@ jobs:
           --pull-request=${{ github.event.pull_request.number }}
           --behavior=update
 
+      - name: Upload run to Infracost Cloud dashboard
+        run: infracost upload --path=/tmp/diff.json
+
       - name: Absolute monthly cost (job summary)
         run: |
           echo '```' >> $GITHUB_STEP_SUMMARY
